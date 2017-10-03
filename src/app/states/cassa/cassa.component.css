@@ -1,0 +1,108 @@
+.main {
+  flex:1
+}
+app-cassa{
+  flex:1
+}
+
+main input {
+  display: none;
+}
+
+main label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #6d6d6d;
+  border: 1px solid #ddd;
+}
+
+main label:hover {
+  cursor: pointer;
+}
+
+main input:checked + label {
+  color: #129ce2;
+  border: 1px solid #ddd;
+  border-top: 3px solid #129ce2;
+  border-bottom: 1px solid #fff;
+  background: #fff;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4 {
+  display: block;
+}
+
+article{
+  position: relative;
+  color: #fff;
+  width: 33.3%;
+  display: inline-block;
+}
+article > div{
+  position: relative;
+  height: 150px;
+  padding: 10px;
+  margin: 5px;
+
+}
+article:nth-child(1) > div{
+  background-color: rgba(218, 137, 17, 0.86);
+}
+article:nth-child(2) > div{
+  background-color: rgba(46, 173, 42, 0.85);
+}
+article:nth-child(3) > div{
+  background-color: rgba(64, 96, 197, 0.96);
+}
+article:nth-child(4) > div{
+  background-color: rgba(189, 0, 0, 0.68);
+}
+
+article > div > div {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+article > div > div > div{padding: 20px}
+article:last-child{
+  width: 100%;
+}
+section{
+  display: block;
+}
+article p, article h3{ text-align: right}
+button{
+  position: absolute;
+  background: rgba(0,0,0,0.08);
+  padding: 20px;
+  left:0;
+  bottom: 0;
+  width: 100%;
+  border: 0;
+  color: #fff;
+  text-align: left;
+
+}
+button i{
+  float: right;
+  font-size:1.2em;
+}
+
+@media screen and (max-width: 920px) {
+  article{
+    width: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  main label {
+    padding: 10px;
+  }
+}

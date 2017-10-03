@@ -1,0 +1,122 @@
+.nav {
+  background: #111822;
+  width: 300px;
+  height: 100vh;
+  -ms-flex: 0 100px;
+}
+nav ul a {
+  text-decoration: none;
+  color:#fff;
+
+  display: block;
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+  display: block;
+  list-style-type: none;
+  text-align: left;
+
+}
+ul li.main_list > a{
+  padding: 20px 0;
+}
+nav ul i{
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.wrapper{
+  transition: all 1s ease;
+  background-color: #082f42;
+}
+
+li {
+  border-bottom: 1px solid #121d25;
+  border-top: 1px solid #214454;
+  display: block;
+  font-size: 1em;
+  color: #fff;
+}
+#menu-toggle {display: none;}
+
+.label-toggle {
+  display: none;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+}
+.onclick-menu {
+/*  outline: none;
+  width: 100%;
+  position: relative;
+  display: inline-block;*/
+}
+.onclick-menu:after{
+  content: "\f078";
+  display: inline-block;
+  width: 20px;
+  height:20px;
+  margin-right: 20px;
+  float: right;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+.onclick-menu.active:after{
+  content:"\f077"
+}
+.onclick-menu + .onclick-menu-content li {
+  border:none;
+  padding: 10px 0;
+  cursor: pointer;
+}
+.main_list a.active{
+  background-color: #085469;
+}
+.onclick-menu.active + .onclick-menu-content {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto;
+}
+.onclick-menu-content li.active{
+  background-color: #0b3647;
+}
+.onclick-menu-content li.active a{
+  color: #d0a600;
+  font-weight: normal;
+}
+.onclick-menu-content {
+  position: absolute;
+  z-index: 1;
+  background-color: #083e51;
+  opacity: 0;
+  visibility: hidden;
+}
+.onclick-menu-content a{
+  padding: 0;
+}
+.onclick-menu-content i{
+  margin-left:30px
+}
+
+@media screen and (max-width: 768px) {
+  .wrapper{
+    overflow-y: scroll;
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+  .nav{
+    height: auto;
+    width: 100vw;
+  }
+  #menu-toggle:checked ~ .wrapper{
+    opacity: 1;
+    height: 100vh;
+    visibility: visible;
+  }
+  .label-toggle{display: flex}
+}

@@ -1,0 +1,24 @@
+<main class="main">
+  <h3>Cassa</h3>
+  <app-tabs>
+    <app-tab tabTitle="Panoramica">
+      <section>
+        <article *ngFor="let item of panoramica">
+          <div>
+            <div>
+              <div>
+                <h3>{{item['amount']}} &euro;</h3>
+                <p>{{item['description']}}</p>
+              </div>
+
+              <button>{{item['title']}}<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i></button>
+            </div>
+
+          </div>
+        </article>
+      </section>
+    </app-tab>
+    <app-tab tabTitle="Ricarica con carta"><h1>Content</h1></app-tab>
+    <app-tab tabTitle="Estratto conto">Content</app-tab>
+  </app-tabs>
+</main>

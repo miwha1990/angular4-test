@@ -1,0 +1,33 @@
+<nav class="navBar nav">
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="label-toggle">
+    <div id="nav-icon2">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </label>
+  <div class="wrapper">
+    <ul>
+      <li *ngFor="let item of menuItems" class="main_list">
+        <a
+          (click)="changeState(item['subitems'])"
+          routerLink = "{{(item['state']==='cassa')?'':'/'+item['state']}}"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          [ngClass]="{'onclick-menu': (item['subitems'][0] !== '') }">
+          <i class="fa" [ngClass]="[item['icon'], 'fa']" aria-hidden="true"></i>{{item['item']}}
+        </a>
+        <ul class="onclick-menu-content" *ngIf="item['subitems'][0] !== ''">
+          <li *ngFor="let subItem of item['subitems']; let i = index" [ngClass]="{'active': subItem.active, 'stated': subItem.active}">
+            <a (click)="changeTab(subItem, item['subitems'])"><i class="fa fa-user" aria-hidden="true"></i>{{subItem.title}}</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+</nav>
